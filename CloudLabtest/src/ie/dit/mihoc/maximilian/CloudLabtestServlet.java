@@ -38,10 +38,10 @@ public class CloudLabtestServlet extends HttpServlet {
 				BString = getServletConfig().getInitParameter("B");
 			
 			if (CString == null)
-				AString = getServletConfig().getInitParameter("C");
+				CString = getServletConfig().getInitParameter("C");
 			
 			if(DString == null)
-				BString = getServletConfig().getInitParameter("D");
+				DString = getServletConfig().getInitParameter("D");
 		}
 		else if(!isStringFloat(AString) && !isStringFloat(BString) && !isStringFloat(CString) && !isStringFloat(DString))
 		{
@@ -61,10 +61,10 @@ public class CloudLabtestServlet extends HttpServlet {
 			if(!(isStringFloat(BString)))
 					BString = getServletConfig().getInitParameter("B");
 			
-			if (!(isStringFloat(AString)))
+			if (!(isStringFloat(CString)))
 					CString = getServletConfig().getInitParameter("C");
 		
-			if(!(isStringFloat(BString)))
+			if(!(isStringFloat(DString)))
 					DString = getServletConfig().getInitParameter("D");
 		}
 		
@@ -81,7 +81,7 @@ public class CloudLabtestServlet extends HttpServlet {
 	        Float.parseFloat(s);
 	        if(s == "") return false;
 	        if(s.getClass().getName() == "String") return false;
-	        return true;
+	        return true; 
 	    } catch (NumberFormatException ex)
 	    {
 	        return false;
